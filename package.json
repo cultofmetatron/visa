@@ -1,8 +1,8 @@
 {
-  "name": "http-server",
+  "name": "Visa",
   "preferGlobal": true,
   "version": "0.3.0",
-  "author": "Nodejitsu <support@nodejitsu.com>",
+  "author": "Peter de Croos <cultofmetatron@aumlogic.com>",
   "description": "authentication middleware for koa",
   "contributors": [
     {
