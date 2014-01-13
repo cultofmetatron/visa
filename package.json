@@ -4,6 +4,7 @@
   "version": "0.3.0",
   "author": "Peter de Croos <cultofmetatron@aumlogic.com>",
   "description": "authentication middleware for koa",
+  "main": "./lib/index.js",
   "contributors": [
     {
       "name": "Peter de Croos",
