@@ -1,0 +1,32 @@
+{
+  "name": "http-server",
+  "preferGlobal": true,
+  "version": "0.3.0",
+  "author": "Nodejitsu <support@nodejitsu.com>",
+  "description": "authentication middleware for koa",
+  "contributors": [
+    {
+      "name": "Peter de Croos",
+      "email": "cultofmetatron@aumlogic.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejitsu/http-server.git"
+  },
+  "keywords": [],
+  "dependencies": {
+    "koa": "~0.2.1"
+  },
+  "analyze": false,
+  "devDependencies": {
+    "request": "2.1.x",
+    "gulp-util": "~2.2.9",
+    "gulp": "~3.3.1"
+  },
+  "bundledDependencies": [],
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.11"
+  }
+}
