@@ -54,7 +54,7 @@ app.use(cascade(
   function *(next){
     console.log('1');
     yield next;
-    console.log('1')
+    console.log('1');
   },
   function *(next){
     console.log('2');
