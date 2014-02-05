@@ -10,12 +10,9 @@ var cascade = function() {
   var args = Array.prototype.slice.call(arguments);
   
   return function *(next) {
-    console.log('yollo')
     yield _.reduce(args, function(memo, nextone) {
       var self = this;
       return function *(next){
-        console.log('what');
-        console.log('memo: ', memo, 'nextOne: ', nextone);
         yield memo.call(self, nextone.call(self, next));
       };
     }, function *(next) {
@@ -63,16 +60,17 @@ app.use(cascade(
   },
   function *(next){
     console.log('3');
-    yield next
+    yield next;
   },
   function *(next){
     console.log('4');
+    this.body = 'Hello my';
     yield next;
   }
 ));
 
 app.use(function *(){
-  this.body = 'Hello World';
+  this.body = this.body + ' World';
 });
 
 app.listen(3000);
