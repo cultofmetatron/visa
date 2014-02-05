@@ -1,3 +1,4 @@
-var visa = require('./lib/visa.js');
+var Visa = require('./lib/index.js');
+console.log(Visa);
 
-module.exports.visa = visa;
+module.exports = Visa;

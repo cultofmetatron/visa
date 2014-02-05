@@ -19,7 +19,10 @@
   "dependencies": {
     "koa": "~0.2.1",
     "bluebird": "~1.0.0",
-    "koa-common": "~1.1.0"
+    "koa-common": "~1.1.0",
+    "koa-session": "~1.2.1",
+    "koa-mount": "~1.2.3",
+    "underscore": "~1.5.2"
   },
   "analyze": false,
   "devDependencies": {

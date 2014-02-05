@@ -1,13 +1,24 @@
+
 var koa = require('koa');
 var app = koa();
+var Visa = require('../index.js');
+var visa = new Visa();
+var session = require(koa-session);
+
+var users = {
+  'cultofmetatron': '12345',
+  'hulioMandingo':  '12345'
+}
+
+var LocalStrategy = require('../lib/local.js');
+
+visa.useStrategy('local', new LocalStrategy({
+  
+}));
 
 
-app.use(function *(next) {
-  var start = new Date();
-  yield next;
-  var ms = new Date() - start
-  console.log('%s %s - %s', this.method, this.url, ms);
-});
+app.use(session)
+app.use(visa.mount());
 
 
 app.use(function *(){
