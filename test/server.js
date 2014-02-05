@@ -5,10 +5,11 @@ var Visa = require('../index.js');
 var visa = new Visa();
 var session = require('koa-session');
 var _ = require('underscore');
+var Promise = require('bluebird');
+var fs = Promise.promisifyAll(require('fs'));
 
-var cascade = function() {
-  var args = Array.prototype.slice.call(arguments);
-  
+var cascade = function(args) {
+  args = Array.prototype.slice.call(arguments);
   return function *(next) {
     yield _.reduce(args, function(memo, nextone) {
       var self = this;
@@ -53,24 +54,29 @@ app.use(cascade(
   function *(next){
     console.log('1');
     yield next;
+    console.log('1')
   },
   function *(next){
     console.log('2');
     yield next;
+    console.log('2');
   },
   function *(next){
     console.log('3');
+    this.body = yield fs.readFileAsync('./index.js','utf8');
     yield next;
+    console.log('3');
   },
   function *(next){
     console.log('4');
-    this.body = 'Hello my';
+    this.body = this.body + 'Hello my';
     yield next;
+    console.log('4');
   }
 ));
 
 app.use(function *(){
-  this.body = this.body + ' World';
+  
 });
 
 app.listen(3000);
